@@ -1,3 +1,5 @@
+let number = 10;
+let alert;
 let list = [
     {
         name: "Caution",
@@ -30,6 +32,11 @@ for(let i=0; i<list.length; i++){
     let ele = document.createElement("div");
     let nameEle = document.createElement("h1");
     let soundEle = document.createElement("h3");
+    if ('soundEle < 5'){
+        soundEle.style.color = 'blue';
+    } else {
+        soundEle.style.color = 'black';
+    }
     nameEle.innerHTML=list[i].name;
     soundEle.innerHTML=list[i].sound;
     ele.appendChild(nameEle);
@@ -37,21 +44,15 @@ for(let i=0; i<list.length; i++){
     document.body.appendChild(ele);
 }
 
-
-let number = 10;
-let alert;
-
 let button= document.createElement("button");
 button.innerHTML="click"+number;
 button.addEventListener("click", function(){
    number=number+1;
    button.innerHTML="click"+number;
-    if (number === 15){
+    if (number < 15){
         alert = "we hit the number"
     }
 })
-
-
 
 document.body.appendChild(button);
 document.body.appendChild(alert);
