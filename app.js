@@ -27,28 +27,31 @@ let list = [
 
 
 for(let i=0; i<list.length; i++){
-    let ele =document.createElement("div");
+    let ele = document.createElement("div");
     let nameEle = document.createElement("h1");
     let soundEle = document.createElement("h3");
     nameEle.innerHTML=list[i].name;
     soundEle.innerHTML=list[i].sound;
-    ele.body.appendChild(nameEle);
-    ele.body.appendChild(soundEle);
+    ele.appendChild(nameEle);
+    ele.appendChild(soundEle);
     document.body.appendChild(ele);
 }
 
+
 let number = 10;
+let alert;
 
 let button= document.createElement("button");
 button.innerHTML="click"+number;
 button.addEventListener("click", function(){
    number=number+1;
    button.innerHTML="click"+number;
+    if (number === 15){
+        alert = "we hit the number"
+    }
 })
 
-if (number=== 15){
-    alert ("we hit the number")
-}
-document.body.appendChild(button);
-document.body.appendChild(ele);
 
+
+document.body.appendChild(button);
+document.body.appendChild(alert);
